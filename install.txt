@@ -1,0 +1,48 @@
+When you download this app, you must do the following to finish the installation:
+
+***
+Useful Tip:
+I've found the command "composer dump-autoload" has gotten me out of a lot of trouble when I'm creating, deleting, and renaming classes.
+It seems to make Laravel reload all the classes so that it has a current list with all the current names.
+***
+
+1) Build the vendor directory
+In the Laravel app directory ("ListApp" in this case), run the command "composer install".
+
+
+
+2) Make sure Apache has write access to the "storage" and "bootstrap/cache" directories.
+If you're installing on Ubuntu, you can probably just make sure the "www-data" user or group has write access.
+
+*** You probably also want to run a command like "sudo chmod -R g+w storage/" so that Apache has the correct access. While setting up and running migrations on my stage computer, I ran into errors about access problems with a log file under storage/ until I ran that command. ***
+
+
+
+3) Set up the ".env" file in the app directory.
+You can probably just copy and modify the automatically included example ".env.example" file, which may be hidden.
+**Check you don't already have a ".env" file before you copy the example.**
+
+
+
+4) Generate an App Key.
+In the application directory (in this case "ListApp"), run the command "php artisan key:generate" to generate the random app key.
+
+
+
+5) Make sure the app is externally accessible through Apache.
+
+**
+**Make sure Apache points to the "public" folder, not the app folder.**
+**
+
+**You'll probably have to restart Apache after making changes to the config files.**
+
+You might have to add something like below to "/etc/apache2/sites-enabled/000-default.conf" (or you can configure the "public" folder to be the document root for all of Apache)
+
+<VirtualHost *:80>
+    ServerName list.example.com
+    DocumentRoot "/var/www/html/example/public"
+    <Directory "/var/www/html/example/public">
+        AllowOverride All
+     </Directory>
+</VirtualHost>
