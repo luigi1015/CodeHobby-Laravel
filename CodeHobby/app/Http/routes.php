@@ -11,6 +11,4 @@
 |
 */
 
-Route::get('/', 'CodeHobbyAppController@getHomepage'/*function () {
-	return view('welcome');
-}*/);
+Route::get( '/', 'CodeHobbyAppController@getHomepage' );
