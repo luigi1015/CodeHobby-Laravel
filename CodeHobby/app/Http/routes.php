@@ -12,3 +12,6 @@
 */
 
 Route::get( '/', 'CodeHobbyAppController@getHomepage' );
+Route::get( '/projects', 'CodeHobbyAppController@getProjects' );
+Route::get( '/contact', 'CodeHobbyAppController@getContact' );
+Route::post( '/contact', 'CodeHobbyAppController@postContact' );

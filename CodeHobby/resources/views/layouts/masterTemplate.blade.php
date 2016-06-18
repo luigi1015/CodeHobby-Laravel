@@ -12,7 +12,10 @@
 		@if( Session::has('error') )
 			<p class="flash-error">{{ Session::get('error') }}</p>
 		@endif
-		<a href='/'>Homepage</a>
+		<a href='/'>Code Hobby</a>
+		<a href='/'>Home</a>
+		<a href='/projects'>Projects</a>
+		<a href='/contact'>Contact</a>
 		@if( Auth::check() )
 			<!-- Logged in -->
 		@else

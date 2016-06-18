@@ -15,4 +15,28 @@ class CodeHobbyAppController extends Controller
 	{
 		return view('home');
 	}
+
+	/**
+	 * Responds to GET /projects
+	 */
+	public function getProjects()
+	{
+		return view('projects');
+	}
+
+	/**
+	 * Responds to GET /contact
+	 */
+	public function getContact()
+	{
+		return view('contact');
+	}
+
+	/**
+	 * Responds to POST /contact
+	 */
+	public function postContact()
+	{
+		return view('contact');
+	}
 }
