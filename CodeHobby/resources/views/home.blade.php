@@ -14,4 +14,7 @@
 	<p>
 	Please feel free to take a look at some of the projects in the Projects section.
 	</p>
+	<p>
+	Your ip address is {{ Request::ip() }}
+	</p>
 @stop

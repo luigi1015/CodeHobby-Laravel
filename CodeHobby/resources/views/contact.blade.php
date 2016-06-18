@@ -8,7 +8,7 @@
 	<p>
 	Fill this form out and press Submit to send me a note.
 	<br>
-	None of the fields are required but I'd like at least your name, a message and some contact info.
+	Only name and message are required, but if you want me to contact you back please provide contact info.
 	</p>
 	<form action="/contact" method="post">
 		{!! csrf_field() !!}
@@ -17,9 +17,6 @@
 		<br>
 		<label for="email">Email</label>
 		<input type="text" name="email" id="email">
-		<br>
-		<label for="phone">Phone</label>
-		<input type="text" name="phone" id="phone">
 		<br>
 		<label for="message">Message</label>
 		<textarea name="message" id="message"></textarea>
