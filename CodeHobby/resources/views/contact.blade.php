@@ -21,6 +21,7 @@
 		<label for="message">Message</label>
 		<textarea name="message" id="message"></textarea>
 		<br>
+		<input type="hidden" name="ipaddress" value="{{ Request::ip() }}">
 		<input type="submit" value="Submit">
 	</form>
 @stop

@@ -18,6 +18,8 @@
 		<a href='/contact'>Contact</a>
 		@if( Auth::check() )
 			<!-- Logged in -->
+			Hello, {{ Auth::user()->name }}!
+			<a href='/admin'>Admin</a>
 			<a href='/logout'>Log out</a>
 		@else
 			<!-- Not logged in -->
