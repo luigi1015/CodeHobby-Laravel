@@ -20,6 +20,7 @@ class ProjectsTableSeeder extends Seeder
 		$project->fullname = "luigi1015/BlackJackStrategy";
 		$project->htmlurl = "https://github.com/luigi1015/BlackJackStrategy";
 		$project->description = "A simple C++ program to do some calculations on Blackjack strategies.";
+		$project->save();
 
 		$project = new \CodeHobby\Project();
 		$project->githubid = "14932260";
@@ -27,5 +28,6 @@ class ProjectsTableSeeder extends Seeder
 		$project->fullname = "luigi1015/CodeHobby";
 		$project->htmlurl = "https://github.com/luigi1015/CodeHobby";
 		$project->description = "The HTML, PHP, CSS, etc for my site, CodeHobby.net";
+		$project->save();
 	}
 }

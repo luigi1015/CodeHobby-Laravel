@@ -23,7 +23,7 @@ class CodeHobbyAppController extends Controller
 	 */
 	public function getProjects()
 	{
-		return view('projects');
+		return view('projects')->with('projects', \CodeHobby\Project::all());
 	}
 
 	/**
@@ -52,6 +52,14 @@ class CodeHobbyAppController extends Controller
 		\Log::info( 'postContact(): name: ' . $name );
 		\Log::info( 'postContact(): email: ' . $email );
 		\Log::info( 'postContact(): message: ' . $message );
+
+		//Save the comment
+		$comment = new \CodeHobby\Comment();
+		$comment->name = $name;
+		$comment->email = $email;
+		$comment->comment = $message;
+		$comment->save();
+
 		return view('contact');
 	}
 }
