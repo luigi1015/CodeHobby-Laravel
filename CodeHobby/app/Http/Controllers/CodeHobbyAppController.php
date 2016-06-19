@@ -72,4 +72,12 @@ class CodeHobbyAppController extends Controller
 	{
 		return view('admin')->with('comments', \CodeHobby\Comment::all());
 	}
+
+	/**
+	 * Responds to GET /ip
+	 */
+	public function getIP()
+	{
+		return view('ip');
+	}
 }

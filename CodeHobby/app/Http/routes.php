@@ -11,16 +11,19 @@
 |
 */
 
+//Main web page routes
 Route::get( '/', 'CodeHobbyAppController@getHomepage' );
 Route::get( '/projects', 'CodeHobbyAppController@getProjects' );
 Route::get( '/contact', 'CodeHobbyAppController@getContact' );
 Route::post( '/contact', 'CodeHobbyAppController@postContact' );
+Route::get( '/ip', 'CodeHobbyAppController@getIP' );
 
 Route::group(['middleware' => 'auth'], function ()
 {
 	Route::get('/admin', 'CodeHobbyAppController@getAdmin');
 });
 
+//Auth (login/logout) info.
 /*Show login*/
 Route::get('/login', 'Auth\AuthController@getLogin');
 
