@@ -18,6 +18,7 @@
 		<a href='/contact'>Contact</a>
 		@if( Auth::check() )
 			<!-- Logged in -->
+			<a href='/logout'>Log out</a>
 		@else
 			<!-- Not logged in -->
 		@endif

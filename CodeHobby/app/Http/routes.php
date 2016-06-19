@@ -15,3 +15,20 @@ Route::get( '/', 'CodeHobbyAppController@getHomepage' );
 Route::get( '/projects', 'CodeHobbyAppController@getProjects' );
 Route::get( '/contact', 'CodeHobbyAppController@getContact' );
 Route::post( '/contact', 'CodeHobbyAppController@postContact' );
+
+Route::group(['middleware' => 'auth'], function ()
+{
+	Route::get('/admin', 'CodeHobbyAppController@getAdmin');
+});
+
+/*Show login*/
+Route::get('/login', 'Auth\AuthController@getLogin');
+
+/*Process login*/
+Route::post('/login', 'Auth\AuthController@postLogin');
+
+/*Process logout*/
+Route::get('/logout', 'Auth\AuthController@logout');
+
+/*Show logout confirmation*/
+Route::get('/logout/confirm', 'Auth\AuthController@confirmLogout');

@@ -49,9 +49,9 @@ class CodeHobbyAppController extends Controller
 		$name = Input::get('name');
 		$email = Input::get('email');
 		$message = Input::get('message');
-		\Log::info( 'postContact(): name: ' . $name );
-		\Log::info( 'postContact(): email: ' . $email );
-		\Log::info( 'postContact(): message: ' . $message );
+		//\Log::info( 'postContact(): name: ' . $name );
+		//\Log::info( 'postContact(): email: ' . $email );
+		//\Log::info( 'postContact(): message: ' . $message );
 
 		//Save the comment
 		$comment = new \CodeHobby\Comment();
@@ -61,5 +61,13 @@ class CodeHobbyAppController extends Controller
 		$comment->save();
 
 		return view('contact');
+	}
+
+	/**
+	 * Responds to GET /admin
+	 */
+	public function getAdmin()
+	{
+		return view('home');
 	}
 }

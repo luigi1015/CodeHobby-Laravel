@@ -28,7 +28,36 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    //protected $redirectTo = '/';
+	protected $redirectTo = '/admin';
+
+	/**
+	 * Where to the user should be redirected to after login fails.
+	 *
+	 * @var string
+	 */
+	protected $loginPath = '/login';
+
+	/**
+	 * Where to the user should be redirected to after logout.
+	 *
+	 * @var string
+	 */
+	protected $redirectAfterLogout = '/logout/confirm';
+
+    protected $username = 'username';
+
+    /**
+     * Show a logut confirmation to the user
+     *
+     */
+    public function confirmLogout()
+    {
+		/*Set a logout confirmation message.*/
+		\Session::flash('message','You have been logged out.');
+
+        return redirect( '/' );
+    }
 
     /**
      * Create a new authentication controller instance.
