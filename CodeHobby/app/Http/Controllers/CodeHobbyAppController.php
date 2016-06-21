@@ -75,8 +75,10 @@ class CodeHobbyAppController extends Controller
 		//return view('admin')->with('comments', \CodeHobby\Comment::all())->with('repositories', $repositories);
 		//$repositories = CodeHobbyAppController::rest_helper('http://github.com/api/v2/json/repos/show/funkatron');
 		//$repositories = CodeHobbyAppController::rest_helper('https://api.github.com/users/luigi1015/repos');
-		$repositories = CodeHobbyAppController::getGithubProjects();
-		return view('admin')->with('comments', \CodeHobby\Comment::all())->with('projects', $repositories);
+		//$repositories = CodeHobbyAppController::getGithubProjects();
+		$repositories = CodeHobbyAppController::updateGithubProjects();
+		//return view('admin')->with('comments', \CodeHobby\Comment::all())->with('projects', $repositories);
+		return view('admin')->with('comments', \CodeHobby\Comment::all());
 	}
 
 	/**
@@ -87,7 +89,31 @@ class CodeHobbyAppController extends Controller
 		return view('ip');
 	}
 
-	private static function getGithubProjects()
+	public static function updateGithubProjects()
+	{
+		$repositories = CodeHobbyAppController::getGithubProjects();
+		//$databaseProjects = \CodeHobby\Project()::all();
+		
+		//Go through the repositories and save them one by one. I'd like to do a bulk save to reduce the number of calls to the database, but that doesn't seem to be supported.
+		foreach( $repositories as $repository )
+		{
+			$projectArray = array( 'githubid' => $repository['id'], 'name' => $repository['name'], 'fullname' => $repository['full_name'], 'htmlurl' => $repository['html_url'], 'description' => $repository['description']  );
+			\CodeHobby\Project::firstOrCreate( $projectArray );
+/*
+			$project = new \CodeHobby\Project();
+			$project->githubid = $repository['id'];
+			$project->name = $repository['name'];
+			$project->fullname = $repository['full_name'];
+			$project->htmlurl = $repository['html_url'];
+			$project->description = $repository['description'];
+			$project->save();//Save should update the project if it already exists.
+*/
+		}
+
+		//return $repositories;
+	}
+
+	private static function getGithubProjects( $assoc = true )
 	{
 		$url = 'https://api.github.com/users/luigi1015/repos';
 		$parms = array( 'http' => array('method' => 'GET') );
@@ -110,7 +136,7 @@ class CodeHobbyAppController extends Controller
 					$response = stream_get_contents($fp);
 				}
 				
-				$jsonResponse = json_decode($response);
+				$jsonResponse = json_decode($response, $assoc);
 				return $jsonResponse;
 			}
 			else
