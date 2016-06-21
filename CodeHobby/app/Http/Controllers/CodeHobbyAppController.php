@@ -70,9 +70,13 @@ class CodeHobbyAppController extends Controller
 	 */
 	public function getAdmin()
 	{
-		$client = new \Github\Client();
-		$repositories = $client->api('luigi1015')->repositories();
-		return view('admin')->with('comments', \CodeHobby\Comment::all())->with('repositories', $repositories);
+		//$client = new \Github\Client();
+		//$repositories = $client->api('luigi1015')->repositories();
+		//return view('admin')->with('comments', \CodeHobby\Comment::all())->with('repositories', $repositories);
+		//$repositories = CodeHobbyAppController::rest_helper('http://github.com/api/v2/json/repos/show/funkatron');
+		//$repositories = CodeHobbyAppController::rest_helper('https://api.github.com/users/luigi1015/repos');
+		$repositories = CodeHobbyAppController::getGithubProjects();
+		return view('admin')->with('comments', \CodeHobby\Comment::all())->with('projects', $repositories);
 	}
 
 	/**
@@ -81,5 +85,49 @@ class CodeHobbyAppController extends Controller
 	public function getIP()
 	{
 		return view('ip');
+	}
+
+	private static function getGithubProjects()
+	{
+		$url = 'https://api.github.com/users/luigi1015/repos';
+		$parms = array( 'http' => array('method' => 'GET') );
+
+		try
+		{
+			ini_set('user_agent','PHP');
+			$context = stream_context_create($parms);
+			$headers = @get_headers($url);
+			if( $headers[6] == 'Status: 200 OK' )
+			{
+				$fp = fopen($url, 'rb', false, $context);
+				if (!$fp)
+				{
+					\Log::error( 'getGithubProjects(): Failed to open URL ' . $url );
+					$response = "";
+				}
+				else
+				{
+					$response = stream_get_contents($fp);
+				}
+				
+				$jsonResponse = json_decode($response);
+				return $jsonResponse;
+			}
+			else
+			{
+				//$file_headers = @get_headers($filename);
+				\Log::error( 'getGithubProjects(): Failed to find URL ' . $url );
+				\Log::error( 'Headers: ' );
+				\Log::error( $headers );
+			}
+
+			return [];
+		}
+		catch( Exception $e )
+		{
+			\Log::error( 'getGithubProjects(): Got an error trying to open URL ' . $url );
+			\Log::error( $e );
+			$response = "";
+		}
 	}
 }
