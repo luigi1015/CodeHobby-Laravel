@@ -22,5 +22,19 @@
 				<pre>{{ $comment->comment }}</pre>
 			</div>
 		@endforeach
+		<br>
+		@foreach( $projects as $project )
+			<div>
+				<h3>Project {{ $project->id }}:</h3>
+				Name: {{ $project->name }}
+				<br>
+				Full Name: {{ $project->full_name }}
+				<br>
+				URL: {{ $project->html_url }}
+				<br>
+				Description: {{ $project->description }}
+				<br>
+			</div>
+		@endforeach
 	</div>
 @stop

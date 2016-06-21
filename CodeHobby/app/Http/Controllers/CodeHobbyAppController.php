@@ -70,7 +70,9 @@ class CodeHobbyAppController extends Controller
 	 */
 	public function getAdmin()
 	{
-		return view('admin')->with('comments', \CodeHobby\Comment::all());
+		$client = new \Github\Client();
+		$repositories = $client->api('luigi1015')->repositories();
+		return view('admin')->with('comments', \CodeHobby\Comment::all())->with('repositories', $repositories);
 	}
 
 	/**
