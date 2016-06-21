@@ -12,14 +12,17 @@
 */
 
 //Main web page routes
-Route::get( '/', 'CodeHobbyAppController@getHomepage' );
-Route::get( '/projects', 'CodeHobbyAppController@getProjects' );
-Route::get( '/contact', 'CodeHobbyAppController@getContact' );
-Route::post( '/contact', 'CodeHobbyAppController@postContact' );
-Route::get( '/ip', 'CodeHobbyAppController@getIP' );;
-Route::get( '/json/ip', 'CodeHobbyAppController@getJSONIP' );
+Route::group(['middleware' => 'throttle:30'], function ()
+{
+	Route::get( '/', 'CodeHobbyAppController@getHomepage' );
+	Route::get( '/projects', 'CodeHobbyAppController@getProjects' );
+	Route::get( '/contact', 'CodeHobbyAppController@getContact' );
+	Route::post( '/contact', 'CodeHobbyAppController@postContact' );
+	Route::get( '/ip', 'CodeHobbyAppController@getIP' );
+	Route::get( '/json/ip', 'CodeHobbyAppController@getJSONIP' );
+});
 
-Route::group(['middleware' => 'auth'], function ()
+Route::group(['middleware' => ['auth', 'throttle:30']], function ()
 {
 	Route::get('/admin', 'CodeHobbyAppController@getAdmin');
 });
