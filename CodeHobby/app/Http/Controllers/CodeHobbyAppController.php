@@ -76,9 +76,9 @@ class CodeHobbyAppController extends Controller
 		//$repositories = CodeHobbyAppController::rest_helper('http://github.com/api/v2/json/repos/show/funkatron');
 		//$repositories = CodeHobbyAppController::rest_helper('https://api.github.com/users/luigi1015/repos');
 		//$repositories = CodeHobbyAppController::getGithubProjects();
-		$repositories = CodeHobbyAppController::updateGithubProjects();
+		//$repositories = CodeHobbyAppController::updateGithubProjects();
 		//return view('admin')->with('comments', \CodeHobby\Comment::all())->with('projects', $repositories);
-		return view('admin')->with('comments', \CodeHobby\Comment::all());
+		return view('admin')->with('comments', \CodeHobby\Comment::all())->with('projects', \CodeHobby\Project::all());
 	}
 
 	/**
@@ -95,6 +95,16 @@ class CodeHobbyAppController extends Controller
 	public function getJSONIP()
 	{
 		return response()->json(['ip' => request()->ip() ]);
+	}
+
+	/**
+	 * Responds to POST /updateprojects
+	 */
+	public function postUpdateProjects( Request $request )
+	{
+		$exitCode = \Artisan::call('updateprojects', []);
+
+		return redirect('admin');
 	}
 
 	public static function updateGithubProjects()

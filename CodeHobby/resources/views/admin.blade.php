@@ -7,8 +7,11 @@
 @section('content')
 	<div>
 		<h2>Code Hobby Contact Comments</h2>
-		These are some projects I put under my Code Hobby banner.
 		<br>
+		<form action="updateprojects" method="post">
+			{!! csrf_field() !!}
+			<input type="submit" value="Update Projects">
+		</form>
 		@if( isset($comments) )
 			@foreach( $comments as $comment )
 				<div>
@@ -31,9 +34,9 @@
 					<h3>Project {{ $project->id }}:</h3>
 					Name: {{ $project->name }}
 					<br>
-					Full Name: {{ $project->full_name }}
+					Full Name: {{ $project->fullname }}
 					<br>
-					URL: {{ $project->html_url }}
+					URL: {{ $project->htmlurl }}
 					<br>
 					Description: {{ $project->description }}
 					<br>

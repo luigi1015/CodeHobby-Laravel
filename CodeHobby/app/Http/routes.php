@@ -25,6 +25,7 @@ Route::group(['middleware' => 'throttle:30'], function ()
 Route::group(['middleware' => ['auth', 'throttle:30']], function ()
 {
 	Route::get('/admin', 'CodeHobbyAppController@getAdmin');
+	Route::post('/updateprojects', 'CodeHobbyAppController@postUpdateProjects');
 });
 
 //Auth (login/logout) info.
