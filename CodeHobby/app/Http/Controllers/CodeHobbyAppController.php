@@ -89,6 +89,14 @@ class CodeHobbyAppController extends Controller
 		return view('ip');
 	}
 
+	/**
+	 * Responds to GET /json/ip
+	 */
+	public function getJSONIP()
+	{
+		return response()->json(['ip' => request()->ip() ]);
+	}
+
 	public static function updateGithubProjects()
 	{
 		$repositories = CodeHobbyAppController::getGithubProjects();

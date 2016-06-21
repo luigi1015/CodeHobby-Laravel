@@ -16,7 +16,8 @@ Route::get( '/', 'CodeHobbyAppController@getHomepage' );
 Route::get( '/projects', 'CodeHobbyAppController@getProjects' );
 Route::get( '/contact', 'CodeHobbyAppController@getContact' );
 Route::post( '/contact', 'CodeHobbyAppController@postContact' );
-Route::get( '/ip', 'CodeHobbyAppController@getIP' );
+Route::get( '/ip', 'CodeHobbyAppController@getIP' );;
+Route::get( '/json/ip', 'CodeHobbyAppController@getJSONIP' );
 
 Route::group(['middleware' => 'auth'], function ()
 {
