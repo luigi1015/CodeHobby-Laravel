@@ -8,10 +8,9 @@ header
 {
 	font-family: 'lucida grande', helvetica, verdana, arial, sans-serif;
 	list-style-type: none;
-	margin: 0em;
-	padding: 1em;
+	margin: 0;
 	overflow: hidden;
-	background-color:  #336699;
+	background-color: #336699;
 }
 
 header nav
@@ -27,7 +26,6 @@ header nav ul
 
 header nav ul li
 {
-	display: inline;
 }
 
 nav a

@@ -8,7 +8,6 @@
 	<body>
 		<header>
 			<nav>
-				
 				<a href='/'>Code Hobby</a>
 				<a href='/'>Home</a>
 				<a href='/projects'>Projects</a>
