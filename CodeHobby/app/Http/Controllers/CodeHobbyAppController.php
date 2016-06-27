@@ -15,7 +15,7 @@ class CodeHobbyAppController extends Controller
 	 */
 	public function getHomepage()
 	{
-		return view('home');
+		return view('home')->with('activePage','home');
 	}
 
 	/**
@@ -23,7 +23,7 @@ class CodeHobbyAppController extends Controller
 	 */
 	public function getProjects()
 	{
-		return view('projects')->with('projects', \CodeHobby\Project::all());
+		return view('projects')->with('projects', \CodeHobby\Project::all())->with('activePage','projects');
 	}
 
 	/**
@@ -31,7 +31,7 @@ class CodeHobbyAppController extends Controller
 	 */
 	public function getContact()
 	{
-		return view('contact');
+		return view('contact')->with('activePage','contact');
 	}
 
 	/**

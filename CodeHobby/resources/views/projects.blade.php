@@ -15,7 +15,7 @@
 		<br>
 		@if( isset($projects) )
 			@foreach( $projects as $project )
-				<div>
+				<article class='project'>
 					Project {{ $project->githubid }}
 					<br>
 					{{ $project->name }}
@@ -25,7 +25,7 @@
 					{{ $project->htmlurl }}
 					<br>
 					{{ $project->description }}
-				</div>
+				</article>
 			@endforeach
 		@endif
 	</div>

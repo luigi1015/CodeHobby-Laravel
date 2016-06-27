@@ -12,16 +12,39 @@
 	</p>
 	<form action="/contact" method="post">
 		{!! csrf_field() !!}
-		<label for="name">Name</label>
-		<input type="text" name="name" id="name">
-		<br>
-		<label for="email">Email</label>
-		<input type="text" name="email" id="email">
-		<br>
-		<label for="message">Message</label>
-		<textarea name="message" id="message"></textarea>
-		<br>
-		<input type="hidden" name="ipaddress" value="{{ Request::ip() }}">
-		<input type="submit" value="Submit">
+		<table>
+			<tr>
+				<td class='align-right'>
+					<label for="name">Name</label>
+				</td>
+				<td>
+					<input type="text" name="name" id="name">
+				</td>
+			</tr>
+			<tr>
+				<td class='align-right'>
+					<label for="email">Email</label>
+				</td>
+				<td>
+					<input type="text" name="email" id="email">
+				</td>
+			</tr>
+			<tr>
+				<td class='align-right'>
+					<label for="message">Message</label>
+				</td>
+				<td>
+					<textarea name="message" id="message" rows="6" cols="50"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td class='align-right'>
+					<input type="hidden" name="ipaddress" value="{{ Request::ip() }}">
+					<input type="submit" value="Submit">
+				</td>
+			</tr>
+		</table>
 	</form>
 @stop

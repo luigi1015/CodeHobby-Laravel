@@ -8,10 +8,10 @@
 	<body>
 		<header>
 			<nav>
-				<a href='/'>Code Hobby</a>
-				<a href='/'>Home</a>
-				<a href='/projects'>Projects</a>
-				<a href='/contact'>Contact</a>
+				<a href='/' id='pageTitle'>Code Hobby</a><!--
+				--><a href='/' @if( isset($activePage) && $activePage == 'home' ) class='active' @endif>Home</a><!--
+				--><a href='/projects' @if( isset($activePage) && $activePage == 'projects' ) class='active' @endif>Projects</a><!--
+				--><a href='/contact' @if( isset($activePage) && $activePage == 'contact' ) class='active' @endif>Contact</a>
 				@if( Auth::check() )
 					{{-- Logged in --}}
 					Hello, {{ Auth::user()->name }}!
