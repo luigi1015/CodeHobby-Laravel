@@ -94,6 +94,28 @@ form table tr td
 	word-wrap: break-word;
 }
 
+.comment
+{
+	margin: 0.5em;
+	padding: 0.25em;
+	background-color: #FFFFFF;
+	border: 1px solid black;
+	border-radius: 1em;
+	box-shadow: 0.25em 0.25em 0.125em #888888;
+	word-wrap: break-word;
+}
+
+.comment pre
+{
+	white-space: pre-wrap;
+}
+
+.hi
+{
+	text-align: center;
+	text-decoration: underline;
+}
+
 #pageTitle
 {
 	font-weight: bold;

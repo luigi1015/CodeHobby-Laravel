@@ -70,15 +70,9 @@ class CodeHobbyAppController extends Controller
 	 */
 	public function getAdmin()
 	{
-		//$client = new \Github\Client();
-		//$repositories = $client->api('luigi1015')->repositories();
-		//return view('admin')->with('comments', \CodeHobby\Comment::all())->with('repositories', $repositories);
-		//$repositories = CodeHobbyAppController::rest_helper('http://github.com/api/v2/json/repos/show/funkatron');
-		//$repositories = CodeHobbyAppController::rest_helper('https://api.github.com/users/luigi1015/repos');
-		//$repositories = CodeHobbyAppController::getGithubProjects();
-		//$repositories = CodeHobbyAppController::updateGithubProjects();
-		//return view('admin')->with('comments', \CodeHobby\Comment::all())->with('projects', $repositories);
-		return view('admin')->with('comments', \CodeHobby\Comment::all())->with('projects', \CodeHobby\Project::all());
+		//\Session::flash( 'error','This is a test error.' );
+		//\Session::flash( 'message','This is a test message.' );
+		return view('admin')->with('comments', \CodeHobby\Comment::all());
 	}
 
 	/**
@@ -110,25 +104,13 @@ class CodeHobbyAppController extends Controller
 	public static function updateGithubProjects()
 	{
 		$repositories = CodeHobbyAppController::getGithubProjects();
-		//$databaseProjects = \CodeHobby\Project()::all();
 		
 		//Go through the repositories and save them one by one. I'd like to do a bulk save to reduce the number of calls to the database, but that doesn't seem to be supported.
 		foreach( $repositories as $repository )
 		{
 			$projectArray = array( 'githubid' => $repository['id'], 'name' => $repository['name'], 'fullname' => $repository['full_name'], 'htmlurl' => $repository['html_url'], 'description' => $repository['description']  );
 			\CodeHobby\Project::firstOrCreate( $projectArray );
-/*
-			$project = new \CodeHobby\Project();
-			$project->githubid = $repository['id'];
-			$project->name = $repository['name'];
-			$project->fullname = $repository['full_name'];
-			$project->htmlurl = $repository['html_url'];
-			$project->description = $repository['description'];
-			$project->save();//Save should update the project if it already exists.
-*/
 		}
-
-		//return $repositories;
 	}
 
 	private static function getGithubProjects( $assoc = true )
@@ -159,7 +141,6 @@ class CodeHobbyAppController extends Controller
 			}
 			else
 			{
-				//$file_headers = @get_headers($filename);
 				\Log::error( 'getGithubProjects(): Failed to find URL ' . $url );
 				\Log::error( 'Headers: ' );
 				\Log::error( $headers );
