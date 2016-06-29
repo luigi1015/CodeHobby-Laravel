@@ -23,7 +23,8 @@ class CodeHobbyAppController extends Controller
 	 */
 	public function getProjects()
 	{
-		return view('projects')->with('projects', \CodeHobby\Project::all())->with('activePage','projects');
+		//return view('projects')->with('projects', \CodeHobby\Project::all())->with('activePage','projects');
+		return view('projects')->with('projects', \CodeHobby\Project::paginate(5))->with('activePage','projects');
 	}
 
 	/**

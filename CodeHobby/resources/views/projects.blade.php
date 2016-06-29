@@ -6,11 +6,7 @@
 
 @section('content')
 	<div>
-		<h2>Code Hobby Projects</h2>
-		These are some projects I put under my Code Hobby banner.
-	</div>
-	<div>
-		<h2>Jeff Projects</h2>
+		<h2>My Projects</h2>
 		These are some projects I put under my user (luigi1015) in GitHub.
 		<br>
 		@if( isset($projects) )
@@ -27,6 +23,8 @@
 					{{ $project->description }}
 				</article>
 			@endforeach
+			<br>
+			@include('pagination.links', ['paginator' => $projects])
 		@endif
 	</div>
 @stop
