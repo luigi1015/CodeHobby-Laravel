@@ -25,7 +25,7 @@ You can probably just copy and modify the automatically included example ".env.e
 
 
 4) Generate an App Key.
-In the application directory (in this case "ListApp"), run the command "php artisan key:generate" to generate the random app key.
+In the application directory (in this case "CodeHobby"), run the command "php artisan key:generate" to generate the random app key.
 
 
 
