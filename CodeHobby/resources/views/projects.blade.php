@@ -7,20 +7,15 @@
 @section('content')
 	<div>
 		<h2>My Projects</h2>
-		These are some projects I put under my user (luigi1015) in GitHub.
+		These are some projects I put under my user (<a href='https://github.com/luigi1015'>luigi1015</a>) in GitHub.
+		<br>
+		<span class='note'>(Click on the titles to go to the GitHub page of the project.)</span>
 		<br>
 		@if( isset($projects) )
 			@foreach( $projects as $project )
 				<article class='project'>
-					Project {{ $project->githubid }}
-					<br>
-					{{ $project->name }}
-					<br>
-					{{ $project->fullname }}
-					<br>
-					{{ $project->htmlurl }}
-					<br>
-					{{ $project->description }}
+					<a href='{{ $project->htmlurl }}'>{{ $project->name }}</a>
+					<pre>{{ $project->description }}</pre>
 				</article>
 			@endforeach
 			<br>

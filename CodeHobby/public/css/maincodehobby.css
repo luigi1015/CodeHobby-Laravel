@@ -90,16 +90,15 @@ form table tr td
 	word-wrap: break-word;
 }
 
-.project-old
+.project a
 {
-	margin: 0.5em;
-	padding: 0.25em;
-	background-color: #FFFFFF;
-	border: 1px solid black;
-	border-radius: 1em;
-	box-shadow: 0.25em 0.25em 0.125em #888888;
-	width: 25em;
-	display: inline-block;
+	font-weight: bold;
+	font-size: large;
+	color: #000000;
+}
+
+.project pre
+{
 	word-wrap: break-word;
 }
 
@@ -129,6 +128,16 @@ form table tr td
 {
 	font-weight: bold;
 	text-decoration: none;
+}
+
+.note
+{
+	font-size: medium;
+}
+
+.linksTable th, .linksTable td
+{
+	padding: 1em;
 }
 
 #pageTitle

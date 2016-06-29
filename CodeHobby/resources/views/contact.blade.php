@@ -5,11 +5,11 @@
 @stop
 
 @section('content')
-	<p>
 	Fill this form out and press Submit to send me a note.
 	<br>
 	Only name and message are required, but if you want me to contact you back please provide contact info.
-	</p>
+	<br>
+	<br>
 	<form action="/contact" method="post">
 		{!! csrf_field() !!}
 		<table>
@@ -47,4 +47,14 @@
 			</tr>
 		</table>
 	</form>
+	<br>
+	<br>
+	You can also find me here:
+	<br>
+	<table class='linksTable'>
+		<tr>
+			<td><a href='https://twitter.com/CodeHobbyNet'>Twitter</a></td>
+			<td><a href='https://github.com/CodeHobbyNet'>GitHub</a></td>
+		</tr>
+	</table>
 @stop

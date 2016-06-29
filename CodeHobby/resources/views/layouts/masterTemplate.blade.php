@@ -14,7 +14,7 @@
 				--><a href='/contact' @if( isset($activePage) && $activePage == 'contact' ) class='active' @endif>Contact</a><!--
 				-->@if( Auth::check() )<!--
 					{{-- Logged in --}}
-					--><a href='/admin'>Admin</a><!--
+					--><a href='/admin' @if( isset($activePage) && $activePage == 'admin' ) class='active' @endif>Admin</a><!--
 					--><a href='/logout'>Log out</a>
 				@else
 					{{-- Not logged in --}}

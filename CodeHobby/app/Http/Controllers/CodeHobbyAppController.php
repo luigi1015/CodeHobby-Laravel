@@ -23,8 +23,7 @@ class CodeHobbyAppController extends Controller
 	 */
 	public function getProjects()
 	{
-		//return view('projects')->with('projects', \CodeHobby\Project::all())->with('activePage','projects');
-		return view('projects')->with('projects', \CodeHobby\Project::paginate(5))->with('activePage','projects');
+		return view('projects')->with('projects', \CodeHobby\Project::paginate(10))->with('activePage','projects');
 	}
 
 	/**
@@ -73,7 +72,7 @@ class CodeHobbyAppController extends Controller
 	{
 		//\Session::flash( 'error','This is a test error.' );
 		//\Session::flash( 'message','This is a test message.' );
-		return view('admin')->with('comments', \CodeHobby\Comment::all());
+		return view('admin')->with('comments', \CodeHobby\Comment::paginate(10))->with('activePage','admin');
 	}
 
 	/**

@@ -24,5 +24,7 @@
 				<pre>{{ $comment->comment }}</pre>
 			</article>
 		@endforeach
+		<br>
+		@include('pagination.links', ['paginator' => $comments])
 	@endif
 @stop
