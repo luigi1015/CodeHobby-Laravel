@@ -14,7 +14,7 @@
 //Main web page routes
 Route::group(['middleware' => 'throttle:30'], function ()
 {
-	Route::get( '/', 'CodeHobbyAppController@getHomepage' );
+	Route::get( '/', 'CodeHobbyAppController@getHomepage' )->name('home');
 	Route::get( '/projects', 'CodeHobbyAppController@getProjects' );
 	Route::get( '/contact', 'CodeHobbyAppController@getContact' );
 	Route::post( '/contact', 'CodeHobbyAppController@postContact' );
