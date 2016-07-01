@@ -155,4 +155,36 @@ class CodeHobbyAppController extends Controller
 			$response = "";
 		}
 	}
+
+	/**
+	 * Responds to GET /loremipsum
+	 */
+	public function getLoremIpsum()
+	{
+		return view('loremipsum'));
+	}
+
+	/**
+	 * Responds to POST /loremipsum
+	 */
+	public function postLoremIpsum( Request $request )
+	{
+		return redirect('loremipsum');
+/*
+		//Validate the form data
+		$this->validate($request, [
+			'name' => 'required|min:3',
+			'email' => 'email',
+			'message' => 'required|min:3',
+		]);
+
+		$name = Input::get('name');
+		$email = Input::get('email');
+		$message = Input::get('message');
+		$ipaddress = Input::get('ipaddress');
+		//\Log::info( 'postContact(): name: ' . $name );
+		//\Log::info( 'postContact(): email: ' . $email );
+		//\Log::info( 'postContact(): message: ' . $message );
+*/
+	}
 }

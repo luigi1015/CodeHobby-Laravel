@@ -20,6 +20,9 @@ Route::group(['middleware' => 'throttle:30'], function ()
 	Route::post( '/contact', 'CodeHobbyAppController@postContact' );
 	Route::get( '/ip', 'CodeHobbyAppController@getIP' );
 	Route::get( '/json/ip', 'CodeHobbyAppController@getJSONIP' );
+	Route::get( '/loremipsum', 'CodeHobbyAppController@getLoremIpsum' );
+        Route::post( '/loremipsum', 'CodeHobbyAppController@postLoremIpsum' );
+
 });
 
 Route::group(['middleware' => ['auth', 'throttle:30']], function ()
