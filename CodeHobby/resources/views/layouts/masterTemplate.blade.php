@@ -27,6 +27,11 @@
 		@if( Session::has('error') )
 			<p class="flash-error">{{ Session::get('error') }}</p>
 		@endif
+		@if( Session::has('errors') )
+			@foreach($errors->all() as $error)
+				<p class="flash-error">{{ $error }}</p>
+			@endforeach
+		@endif
 
 		@if( Auth::check() )
 			<!-- Logged in, so say hi! -->

@@ -62,7 +62,7 @@ class CodeHobbyAppController extends Controller
 		$comment->ipaddress = $ipaddress;
 		$comment->save();
 
-		return view('contact');
+		return view('contact')->with('activePage','contact');
 	}
 
 	/**
@@ -169,7 +169,19 @@ class CodeHobbyAppController extends Controller
 	 */
 	public function postLoremIpsum( Request $request )
 	{
-		return redirect('loremipsum');
+		//Validate the form data
+		$this->validate($request, [
+			'numberOfParagraphs' => 'required|numeric|min:1|max:20',
+		]);
+
+		$numberOfParagraphs = Input::get('numberOfParagraphs');
+		$generator = new \Badcow\LoremIpsum\Generator();
+		$paragraphs = $generator->getParagraphs($numberOfParagraphs);
+
+		//\Session::flash( 'message',$numberOfParagraphs );
+
+		return view('loremipsum')->with('loremipsumtext', $paragraphs);
+		//return redirect('loremipsum')->with('loremipsumtext', $paragraphs);
 /*
 		//Validate the form data
 		$this->validate($request, [
