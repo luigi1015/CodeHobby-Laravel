@@ -190,4 +190,12 @@ class CodeHobbyAppController extends Controller
 	{
 		return view('reference')->with('activePage','reference');
 	}
+
+	/**
+	 * Responds to GET /browserdata
+	 */
+	public function getBrowserData()
+	{
+		return view('browserdata');
+	}
 }

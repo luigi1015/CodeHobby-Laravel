@@ -23,7 +23,7 @@ Route::group(['middleware' => 'throttle:30'], function ()
 	Route::get( '/loremipsum', 'CodeHobbyAppController@getLoremIpsum' );
 	Route::post( '/loremipsum', 'CodeHobbyAppController@postLoremIpsum' );
 	Route::get( '/reference', 'CodeHobbyAppController@getReference' );
-
+	Route::get( '/browserdata', 'CodeHobbyAppController@getBrowserData' );
 });
 
 Route::group(['middleware' => ['auth', 'throttle:30']], function ()

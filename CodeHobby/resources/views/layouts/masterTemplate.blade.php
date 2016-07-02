@@ -4,6 +4,8 @@
 		<meta charset="UTF-8">
 		<title>@yield('title','Welcome to CodeHobby!')</title>
 		<link rel="stylesheet" href="{{ URL::asset('css/maincodehobby.css') }}">
+		<link rel="stylesheet" href="{{ URL::asset('css/smallcodehobby.css') }}.css" media="only screen and (max-width: 38em)">
+		@yield( 'headerContent' )
 	</head>
 	<body>
 		<a id="top"></a>
