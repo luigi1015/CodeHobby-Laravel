@@ -161,7 +161,7 @@ class CodeHobbyAppController extends Controller
 	 */
 	public function getLoremIpsum()
 	{
-		return view('loremipsum'));
+		return view('loremipsum');
 	}
 
 	/**
