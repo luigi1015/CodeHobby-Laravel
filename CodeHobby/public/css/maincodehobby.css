@@ -133,6 +133,7 @@ form table tr td
 .note
 {
 	font-size: medium;
+	font-style: italic;
 }
 
 .linksTable th, .linksTable td
