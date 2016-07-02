@@ -6,11 +6,13 @@
 		<link rel="stylesheet" href="{{ URL::asset('css/maincodehobby.css') }}">
 	</head>
 	<body>
+		<a id="top"></a>
 		<header>
 			<nav>
 				<a href='/' id='pageTitle'>Code Hobby</a><!--
 				--><a href='/' @if( isset($activePage) && $activePage == 'home' ) class='active' @endif>Home</a><!--
 				--><a href='/projects' @if( isset($activePage) && $activePage == 'projects' ) class='active' @endif>Projects</a><!--
+				--><a href='/reference' @if( isset($activePage) && $activePage == 'reference' ) class='active' @endif>Reference</a><!--
 				--><a href='/contact' @if( isset($activePage) && $activePage == 'contact' ) class='active' @endif>Contact</a><!--
 				-->@if( Auth::check() )<!--
 					{{-- Logged in --}}

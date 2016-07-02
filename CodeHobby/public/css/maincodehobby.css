@@ -17,7 +17,7 @@ header
 nav a
 {
 	display: inline-block;
-	color: #ffffff;
+	color: #FFFFFF;
 	text-align: center;
 	margin: 0em;
 	padding: 0.5em;
@@ -144,6 +144,30 @@ form table tr td
 {
 	background-color: #FFFFFF;
 	box-shadow: 0.125em 0.125em 0.125em #888888;
+}
+
+.refTable
+{
+	border-collapse: collapse;
+	border: 1px solid black;
+}
+
+.refTable td, .refTable th
+{
+	border: 1px solid black;
+	text-align: left;
+	padding: 0.5em;
+}
+
+.refTable th
+{
+	color: #FFFFFF;
+	background-color: #606060;
+}
+
+.refTable tr:nth-child(even)
+{
+	background-color: #D3D3D3;
 }
 
 #pageTitle

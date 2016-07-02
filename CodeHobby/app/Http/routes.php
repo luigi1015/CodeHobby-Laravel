@@ -21,7 +21,8 @@ Route::group(['middleware' => 'throttle:30'], function ()
 	Route::get( '/ip', 'CodeHobbyAppController@getIP' );
 	Route::get( '/json/ip', 'CodeHobbyAppController@getJSONIP' );
 	Route::get( '/loremipsum', 'CodeHobbyAppController@getLoremIpsum' );
-        Route::post( '/loremipsum', 'CodeHobbyAppController@postLoremIpsum' );
+	Route::post( '/loremipsum', 'CodeHobbyAppController@postLoremIpsum' );
+	Route::get( '/reference', 'CodeHobbyAppController@getReference' );
 
 });
 

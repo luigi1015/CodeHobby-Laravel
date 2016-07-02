@@ -181,22 +181,13 @@ class CodeHobbyAppController extends Controller
 		//\Session::flash( 'message',$numberOfParagraphs );
 
 		return view('loremipsum')->with('loremipsumtext', $paragraphs);
-		//return redirect('loremipsum')->with('loremipsumtext', $paragraphs);
-/*
-		//Validate the form data
-		$this->validate($request, [
-			'name' => 'required|min:3',
-			'email' => 'email',
-			'message' => 'required|min:3',
-		]);
+	}
 
-		$name = Input::get('name');
-		$email = Input::get('email');
-		$message = Input::get('message');
-		$ipaddress = Input::get('ipaddress');
-		//\Log::info( 'postContact(): name: ' . $name );
-		//\Log::info( 'postContact(): email: ' . $email );
-		//\Log::info( 'postContact(): message: ' . $message );
-*/
+	/**
+	 * Responds to GET /reference
+	 */
+	public function getReference()
+	{
+		return view('reference')->with('activePage','reference');
 	}
 }
