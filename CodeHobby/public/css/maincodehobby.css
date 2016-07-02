@@ -226,3 +226,11 @@ form table tr td
 		word-wrap: break-word;
 	}
 }
+
+@media only screen and (max-width: 800px)
+{
+	.refTable
+	{
+		font-size: small;
+	}
+}
