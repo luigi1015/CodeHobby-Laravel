@@ -176,3 +176,36 @@ form table tr td
 	font-weight: bold;
 	text-shadow: 2px 2px #989898;
 }
+
+@media only screen and (max-width: 1000px)
+{
+	body
+	{
+		font-size: xx-large;
+	}
+
+	nav a
+	{
+		font-size: xx-large;
+	}
+
+	.flash-message
+	{
+		font-size: xx-large;
+	}
+
+	.flash-error
+	{
+		font-size: xx-large;
+	}
+
+	.project a
+	{
+		font-size: xx-large;
+	}
+
+	.note
+	{
+		font-size: large;
+	}
+}

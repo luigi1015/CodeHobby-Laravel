@@ -7,5 +7,4 @@ function displayWindowSize()
 	var myHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 	document.getElementById("displayWidth").innerHTML = myWidth;
 	document.getElementById("displayHeight").innerHTML = myHeight;
-	alert('test');
 };
