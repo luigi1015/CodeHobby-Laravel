@@ -224,6 +224,7 @@ form table tr td
 		white-space: -pre-wrap;
 		white-space: -o-pre-wrap;
 		word-wrap: break-word;
+		font-size: large;
 	}
 }
 
@@ -232,5 +233,10 @@ form table tr td
 	.refTable
 	{
 		font-size: small;
+	}
+
+	pre
+	{
+		font-size: medium;
 	}
 }
