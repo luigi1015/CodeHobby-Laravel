@@ -17,6 +17,7 @@
 			<li><a href="#Programming-BasicHTML5">Basic HTML5 Page</a></li>
 			<li><a href="#Programming-BasicC">Basic C Program</a></li>
 			<li><a href="#Programming-BasicCpp">Basic C++ Program</a></li>
+			<li><a href="#Programming-BasicJava">Basic Java Program</a></li>
 		</ul>
 	</ol>
 	<hr>
@@ -719,6 +720,75 @@ int main( int argc, char *argv[] )
 	On Windows, you might also need to change &quot;<code>-o helloworld</code>&quot; to &quot;<code>-o helloworld.exe</code>&quot;.
 	<br>
 	However, if you are programming in Windows, you're probably using an IDE instead of GCC on the command line, so the IDE will probably do this compilation step for you.
+	<br>
+	<br>
+	<a href="#top">Back to top</a>
+	<hr>
+	<a id="Programming-BasicJava"><h4>Java</h4></a>
+	<fieldset class="codeFieldSet">
+		<legend>Basic Java Program</legend>
+		<code>
+			<pre>
+public class HelloWorld
+{
+	private String displayText = "";
+
+	/**
+	 * Constructor. Sets the displayText string.
+	 */
+	public HelloWorld()
+	{
+		displayText = "Hello World!";
+	}
+
+	/**
+	 * Returns the text to display.
+	 *
+	 * @return The text to display.
+	 */
+	private String getTextToDisplay()
+	{
+		return displayText;
+	}
+
+	/**
+	 * This is the method that is run when this program is run on the command line.
+	 * All it really does is display what getTextToDisplay() returns.
+	 * Since the method is static, it creates a HelloWorld object to gain access to the getTextToDisplay() method.
+	 *
+	 * @param args The command line arguments when the program is run.
+	 */
+	public static void main( String[] args )
+	{
+		HelloWorld hw = new HelloWorld();
+		System.out.println( hw.getTextToDisplay() );
+	}
+}
+			</pre>
+		</code>
+	</fieldset>
+	<br>
+	To run the Java program, you need to compile it first.
+	<br>
+	If you have the standard Java JDK (not just the JRE) installed and can use the command line, you should be able to compile the program with a command like:
+	<br>
+	<br>
+	<code>javac HelloWorld.java</code>
+	<br>
+	<br>
+	Just replace "HelloWorld.java" with the filename of your code, which should match the name of the class inside and probably should have the filename extension "java".
+	<br>
+	That will create a class file, which is the Java bytecode version of the class.
+	<br>
+	Then you'll need to run the resulting bytecode using the JRE to run the program.
+	<br>
+	If you have the standard Java JRE or standard Java JDK installed an can use the command line, you should be able to run the program using a command like:
+	<br>
+	<br>
+	<code>java HelloWorld</code>
+	<br>
+	<br>
+	Just replace "HelloWorld" with the name of the class, which should match the filename of the class file without the "class" filename extension.
 	<br>
 	<br>
 	<a href="#top">Back to top</a>
