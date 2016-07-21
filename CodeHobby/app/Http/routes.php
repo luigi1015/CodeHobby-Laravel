@@ -24,12 +24,15 @@ Route::group(['middleware' => 'throttle:30'], function ()
 	Route::post( '/loremipsum', 'CodeHobbyAppController@postLoremIpsum' );
 	Route::get( '/reference', 'CodeHobbyAppController@getReference' );
 	Route::get( '/browserdata', 'CodeHobbyAppController@getBrowserData' );
+	Route::get( '/randomdata', 'CodeHobbyAppController@getRandomData' );
+	Route::post( '/randomdata', 'CodeHobbyAppController@postRandomData' );
 });
 
 Route::group(['middleware' => ['auth', 'throttle:30']], function ()
 {
 	Route::get('/admin', 'CodeHobbyAppController@getAdmin');
 	Route::post('/updateprojects', 'CodeHobbyAppController@postUpdateProjects');
+	Route::get('/eastereggs', 'CodeHobbyAppController@getEasterEggs');
 });
 
 //Auth (login/logout) info.

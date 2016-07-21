@@ -76,6 +76,14 @@ class CodeHobbyAppController extends Controller
 	}
 
 	/**
+	 * Responds to GET /eastereggs
+	 */
+	public function getEasterEggs()
+	{
+		return view('eastereggs')->with('activePage','eastereggs');
+	}
+
+	/**
 	 * Responds to GET /ip
 	 */
 	public function getIP()
@@ -197,5 +205,49 @@ class CodeHobbyAppController extends Controller
 	public function getBrowserData()
 	{
 		return view('browserdata');
+	}
+
+	/**
+	 * Responds to GET /randomdata
+	 */
+	public function getRandomData()
+	{
+		return view('random');
+	}
+
+	/**
+	 * Responds to POST /randomdata
+	 */
+	public function postRandomData( Request $request )
+	{
+		//Validate the form data
+		$this->validate($request, [
+			'type' => 'required',
+			'amount' => 'required|numeric|min:1|max:100',
+			'min' => 'required|numeric|min:1|max:100',
+			'max' => 'required|numeric|min:1|max:100',
+		]);
+
+		$type = Input::get('type');
+		$amount = Input::get('amount');
+		$min = Input::get('min');
+		$max = Input::get('max');
+		//\Log::info( 'postRandomData(): type: ' . $type );
+		//\Log::info( 'postRandomData(): amount: ' . $amount );
+
+		$randomData = array();
+		if( $type == 'int' )
+		{
+			for( $i = 0; $i < $amount; $i++ )
+			{
+				array_push( $randomData, random_int($min,$max) );
+			}
+		}
+		else if( $type == 'bytes' )
+		{
+			//array_push( $randomData, random_bytes($amount) );
+		}
+
+		return view('random')->with('randomData', $randomData);
 	}
 }
