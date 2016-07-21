@@ -243,6 +243,18 @@ class CodeHobbyAppController extends Controller
 				array_push( $randomData, random_int($min,$max) );
 			}
 		}
+		else if( $type == 'password' )
+		{
+			$password = '';
+			$validCharacters = array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k', 'm', 'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '2', '3', '4', '5', '6', '7', '8', '9',  '-', '=', '[', ']', '_', '+', '<', '>', '?', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '|' );
+			//array_push( $randomData, random_bytes($amount) );
+			for( $i = 0; $i < $amount; $i++ )
+			{
+				$char = $validCharacters[random_int(0,sizeof($validCharacters))];
+				$password .= $char;
+			}
+			array_push( $randomData, $password );
+		}
 		else if( $type == 'bytes' )
 		{
 			//array_push( $randomData, random_bytes($amount) );
