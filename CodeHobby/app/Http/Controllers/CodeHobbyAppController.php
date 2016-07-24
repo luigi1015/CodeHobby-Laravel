@@ -262,4 +262,41 @@ class CodeHobbyAppController extends Controller
 
 		return view('random')->with('randomData', $randomData);
 	}
+
+	/**
+	 * Responds to GET /time
+	 */
+	public function getTime()
+	{
+		$times = array();
+		$times['America/New_York'] = new \DateTime("now", new \DateTimeZone('America/New_York') );
+		$times['America/Chicago'] = new \DateTime("now", new \DateTimeZone('America/Chicago') );
+		$times['America/Denver'] = new \DateTime("now", new \DateTimeZone('America/Denver') );
+		$times['America/Los_Angeles'] = new \DateTime("now", new \DateTimeZone('America/Los_Angeles') );
+		$times['America/Anchorage'] = new \DateTime("now", new \DateTimeZone('America/Anchorage') );
+		$times['Pacific/Honolulu'] = new \DateTime("now", new \DateTimeZone('Pacific/Honolulu') );
+		$times['Europe/Amsterdam'] = new \DateTime("now", new \DateTimeZone('Europe/Amsterdam') );
+		$times['Europe/Athens'] = new \DateTime("now", new \DateTimeZone('Europe/Athens') );
+		$times['Europe/Berlin'] = new \DateTime("now", new \DateTimeZone('Europe/Berlin') );
+		$times['Europe/Brussels'] = new \DateTime("now", new \DateTimeZone('Europe/Brussels') );
+		$times['Europe/Dublin'] = new \DateTime("now", new \DateTimeZone('Europe/Dublin') );
+		$times['Europe/Kiev'] = new \DateTime("now", new \DateTimeZone('Europe/Kiev') );
+		$times['Europe/London'] = new \DateTime("now", new \DateTimeZone('Europe/London') );
+		$times['Europe/Madrid'] = new \DateTime("now", new \DateTimeZone('Europe/Madrid') );
+		$times['Europe/Moscow'] = new \DateTime("now", new \DateTimeZone('Europe/Moscow') );
+		$times['Europe/Paris'] = new \DateTime("now", new \DateTimeZone('Europe/Paris') );
+		$times['Europe/Rome'] = new \DateTime("now", new \DateTimeZone('Europe/Rome') );
+		$times['Europe/Stockholm'] = new \DateTime("now", new \DateTimeZone('Europe/Stockholm') );
+		$times['Europe/Vatican'] = new \DateTime("now", new \DateTimeZone('Europe/Vatican') );
+		$times['Europe/Zurich'] = new \DateTime("now", new \DateTimeZone('Europe/Zurich') );
+		$times['Asia/Bangkok'] = new \DateTime("now", new \DateTimeZone('Asia/Bangkok') );
+		$times['Asia/Hong_Kong'] = new \DateTime("now", new \DateTimeZone('Asia/Hong_Kong') );
+		$times['Asia/Jerusalem'] = new \DateTime("now", new \DateTimeZone('Asia/Jerusalem') );
+		$times['Asia/Tokyo'] = new \DateTime("now", new \DateTimeZone('Asia/Tokyo') );
+		$times['Pacific/Auckland'] = new \DateTime("now", new \DateTimeZone('Pacific/Auckland') );
+		$times['GMT'] = new \DateTime("now", new \DateTimeZone('GMT') );
+		$times['UTC'] = new \DateTime("now", new \DateTimeZone('UTC') );
+		$times['Zulu'] = new \DateTime("now", new \DateTimeZone('Zulu') );
+		return view('time')->with('times', $times);
+	}
 }

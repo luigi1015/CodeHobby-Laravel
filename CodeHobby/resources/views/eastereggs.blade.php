@@ -16,4 +16,6 @@
 	<a href='/browserdata'>Get some data about your browser</a>
 	<br>
 	<a href='/randomdata'>Get some random data</a>
+	<br>
+	<a href='/time'>Get the current time in various time zones</a>
 @stop

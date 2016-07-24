@@ -26,6 +26,7 @@ Route::group(['middleware' => 'throttle:30'], function ()
 	Route::get( '/browserdata', 'CodeHobbyAppController@getBrowserData' );
 	Route::get( '/randomdata', 'CodeHobbyAppController@getRandomData' );
 	Route::post( '/randomdata', 'CodeHobbyAppController@postRandomData' );
+	Route::get( '/time', 'CodeHobbyAppController@getTime' );
 });
 
 Route::group(['middleware' => ['auth', 'throttle:30']], function ()
