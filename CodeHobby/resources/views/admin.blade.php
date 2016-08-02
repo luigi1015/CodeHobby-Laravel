@@ -20,6 +20,8 @@
 				<br>
 				IP Address: {{ $comment->ipaddress }}
 				<br>
+				Created At: {{ $comment->created_at }}
+				<br>
 				Comment: 
 				<pre>{{ $comment->comment }}</pre>
 			</article>
