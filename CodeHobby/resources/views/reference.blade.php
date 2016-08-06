@@ -666,6 +666,8 @@ int main( int argc, char *argv[] )
 	<br>
 	This should create an executable file called <code>helloworld</code>. That's the file you can run to execute your program.
 	<br>
+	Alternatively, you can also compile with debugging info and showing all warnings with <code>gcc -Wall -g -o helloworld helloworld.c</code>
+	<br>
 	<br>
 	On Windows, you might also need to change &quot;<code>-o helloworld</code>&quot; to &quot;<code>-o helloworld.exe</code>&quot;.
 	<br>
@@ -715,6 +717,8 @@ int main( int argc, char *argv[] )
 	Just replace &quot;<code>helloworld.cpp</code>&quot; with the filename of your code file.
 	<br>
 	This should create an executable file called <code>helloworld</code>. That's the file you can run to execute your program.
+	<br>
+	Alternatively, you can also compile with debugging info and showing all warnings with <code>g++ -Wall -g -o helloworld helloworld.cpp</code>
 	<br>
 	<br>
 	On Windows, you might also need to change &quot;<code>-o helloworld</code>&quot; to &quot;<code>-o helloworld.exe</code>&quot;.
