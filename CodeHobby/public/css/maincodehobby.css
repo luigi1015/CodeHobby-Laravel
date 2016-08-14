@@ -177,6 +177,60 @@ form table tr td
 	text-shadow: 2px 2px #989898;
 }
 
+#cssColorFieldset
+{
+	width: 20em;
+	height: 10em;
+	padding: 0.5em;
+	padding-bottom: 1.5em;
+}
+
+#cssColorDiv
+{
+	width: 100%;
+	height: 100%;
+}
+
+#cssColorTable
+{
+	width: 100%;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+#cssColorTable tr
+{
+	border-top: 1px solid black;
+}
+
+#cssColorTable td, #cssColorTable th
+{
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+#cssColorTable th
+{
+	text-align: left;
+	background-color: #606060;
+	color: #FFFFFF;
+}
+
+#cssColorTable tr:nth-child(even)
+{
+	background-color: #C0C0C0;
+}
+
+#cssColorTable tr:nth-child(odd)
+{
+	background-color: #FFFFFF;
+}
+
+#cssColorTable tr td:nth-child(3)
+{
+	width: 40%;
+}
+
 @media only screen and (max-width: 1000px)
 {
 	body

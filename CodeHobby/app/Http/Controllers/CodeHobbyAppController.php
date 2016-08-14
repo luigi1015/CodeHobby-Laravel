@@ -109,6 +109,14 @@ class CodeHobbyAppController extends Controller
 		return redirect('admin');
 	}
 
+	/**
+	 * Responds to GET /csscolors
+	 */
+	public function getCssColors()
+	{
+		return view('csscolors');
+	}
+
 	public static function updateGithubProjects()
 	{
 		$repositories = CodeHobbyAppController::getGithubProjects();
