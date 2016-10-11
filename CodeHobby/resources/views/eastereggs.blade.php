@@ -20,4 +20,6 @@
 	<a href='/time'>Get the current time in various time zones</a>
 	<br>
 	<a href='/csscolors'>Look at some CSS colors</a>
+	<br>
+	<a href='/japanese'>Japanese Reference</a>
 @stop

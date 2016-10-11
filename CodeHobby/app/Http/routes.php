@@ -28,6 +28,7 @@ Route::group(['middleware' => 'throttle:30'], function ()
 	Route::post( '/randomdata', 'CodeHobbyAppController@postRandomData' );
 	Route::get( '/time', 'CodeHobbyAppController@getTime' );
 	Route::get( '/csscolors', 'CodeHobbyAppController@getCssColors' );
+	Route::get( '/japanese', 'CodeHobbyAppController@getJapanese' );
 });
 
 Route::group(['middleware' => ['auth', 'throttle:30']], function ()

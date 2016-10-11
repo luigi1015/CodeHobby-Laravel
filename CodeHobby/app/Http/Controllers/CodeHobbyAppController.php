@@ -110,6 +110,14 @@ class CodeHobbyAppController extends Controller
 	}
 
 	/**
+	 * Responds to GET /japanese
+	 */
+	public function getJapanese()
+	{
+		return view('japanese');
+	}
+
+	/**
 	 * Responds to GET /csscolors
 	 */
 	public function getCssColors()
