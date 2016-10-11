@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-	<label for="hiraganaTable">Hepburn Romanization of Hiragana</label>
+	<label for="hiraganaTable">Hepburn Romanization of Hiragana (<span class="japaneseObsolete">obsolete in red</span>)</label>
 	<table id="hiraganaTable" class="japaneseReferenceTable">
 		<tr>
 			<th></th>
@@ -109,9 +109,9 @@
 		<tr>
 			<td>w</td>
 			<td>わ wa</td>
-			<td>ゐ wi (obsolete)</td>
+			<td><span class="japaneseObsolete">ゐ wi</span></td>
 			<td></td>
-			<td>ゑ we (obsolete)</td>
+			<td><span class="japaneseObsolete">ゑ we</span></td>
 			<td>を wo</td>
 			<td></td>
 			<td></td>

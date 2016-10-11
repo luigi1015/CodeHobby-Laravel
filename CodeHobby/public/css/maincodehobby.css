@@ -191,6 +191,11 @@ form table tr td
 	background-color: #CCCCCC;
 }
 
+.japaneseObsolete
+{
+	color: #FF0000;
+}
+
 #pageTitle
 {
 	font-weight: bold;
