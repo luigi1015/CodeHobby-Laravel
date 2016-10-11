@@ -6,7 +6,7 @@
 
 @section('content')
 	<label for="hiraganaTable">Hepburn Romanization of Hiragana</label>
-	<table id="hiraganaTable">
+	<table id="hiraganaTable" class="japaneseReferenceTable">
 		<tr>
 			<th></th>
 			<th>あ a</th>
