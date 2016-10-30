@@ -20,7 +20,7 @@ class CreateProjectsTable extends Migration
 			$table->string('name');
 			$table->string('fullname');
 			$table->string('htmlurl');
-			$table->string('description');
+			$table->string('description')->nullable();
 		});
 	}
 
