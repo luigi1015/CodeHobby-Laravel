@@ -125,6 +125,14 @@ class CodeHobbyAppController extends Controller
 		return view('csscolors');
 	}
 
+	/**
+	 * Responds to GET /htmlref
+	 */
+	public function getHtmlref()
+	{
+		return view('htmlref');
+	}
+
 	public static function updateGithubProjects()
 	{
 		$repositories = CodeHobbyAppController::getGithubProjects();

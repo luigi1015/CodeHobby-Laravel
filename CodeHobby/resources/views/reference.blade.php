@@ -19,6 +19,7 @@
 			<li><a href="#Programming-BasicCpp">Basic C++ Program</a></li>
 			<li><a href="#Programming-BasicJava">Basic Java Program</a></li>
 		</ul>
+		<li><a href="/htmlref">HTML Reference</a></li>
 	</ol>
 	<hr>
 	<a id="Computers"></a>
