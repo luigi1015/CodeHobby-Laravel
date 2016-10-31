@@ -5,6 +5,7 @@
 @stop
 
 @section('content')
+	<a href="/csscolors">CSS Colors</a>
 	<h1>Heading tags</h1>
 	<br>
 	<h1>Here's a H1.</h1>
