@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
 		$user = new \CodeHobby\User();
 		$user->name = "Jeff";
 		$user->username = "luigi1015";
-		$user->password = \Hash::make('bowser1015');
+		$user->password = \Hash::make('supermario');
 		$user->email = "";
 		$user->save();
     }
