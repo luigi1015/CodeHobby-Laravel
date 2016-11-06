@@ -54,5 +54,85 @@
 			<td>#F0FFFF</td>
 			<td style="background-color: #F0FFFF"></td>
 		</tr>
+		<tr>
+			<td>Beige</td>
+			<td>#F5F5DC</td>
+			<td style="background-color: #F5F5DC"></td>
+		</tr>
+		<tr>
+			<td>Bisque</td>
+			<td>#FFE4C4</td>
+			<td style="background-color: #FFE4C4"></td>
+		</tr>
+		<tr>
+			<td>Black</td>
+			<td>#000000</td>
+			<td style="background-color: #000000"></td>
+		</tr>
+		<tr>
+			<td>BlanchedAlmond</td>
+			<td>#FFEBCD</td>
+			<td style="background-color: #FFEBCD"></td>
+		</tr>
+		<tr>
+			<td>Blue</td>
+			<td>#0000FF</td>
+			<td style="background-color: #0000FF"></td>
+		</tr>
+		<tr>
+			<td>BlueViolet</td>
+			<td>#8A2BE2</td>
+			<td style="background-color: #8A2BE2"></td>
+		</tr>
+		<tr>
+			<td>Brown</td>
+			<td>#A52A2A</td>
+			<td style="background-color: #A52A2A"></td>
+		</tr>
+		<tr>
+			<td>BurlyWood</td>
+			<td>#DEB887</td>
+			<td style="background-color: #DEB887"></td>
+		</tr>
+		<tr>
+			<td>CadetBlue</td>
+			<td>#5F9EA0</td>
+			<td style="background-color: #5F9EA0"></td>
+		</tr>
+		<tr>
+			<td>Chartreuse</td>
+			<td>#7FFF00</td>
+			<td style="background-color: #7FFF00"></td>
+		</tr>
+		<tr>
+			<td>Chocolate</td>
+			<td>#D2691E</td>
+			<td style="background-color: #D2691E"></td>
+		</tr>
+		<tr>
+			<td>Coral</td>
+			<td>#FF7F50</td>
+			<td style="background-color: #FF7F50"></td>
+		</tr>
+		<tr>
+			<td>CornflowerBlue</td>
+			<td>#6495ED</td>
+			<td style="background-color: #6495ED"></td>
+		</tr>
+		<tr>
+			<td>Cornsilk</td>
+			<td>#FFF8DC</td>
+			<td style="background-color: #FFF8DC"></td>
+		</tr>
+		<tr>
+			<td>Crimson</td>
+			<td>#DC143C</td>
+			<td style="background-color: #DC143C"></td>
+		</tr>
+		<tr>
+			<td>Cyan</td>
+			<td>#00FFFF</td>
+			<td style="background-color: #00FFFF"></td>
+		</tr>
 	</table>
 @stop
